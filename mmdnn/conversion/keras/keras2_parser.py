@@ -624,6 +624,7 @@ class Keras2Parser(Parser):
 
         # activation
         self._defuse_activation(source_node)
+        IR_node.attr["return_sequences"].b = source_node.keras_layer.return_sequences
 
         # weights
         if self.weight_loaded:
